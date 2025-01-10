@@ -31,6 +31,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{listings}
 \usepackage{accents}
+\usepackage{braket}
 
 \usepackage{centernot}
 \usepackage{mathtools}
@@ -107,7 +108,7 @@
 %Here you can enter answers to homework questions
 
 \begin{numedquestion}
-    \textbf{Question Statement:}\\
+    \textbf{Problem Statement:}\\
     Frankie the frog lives in a pond with two lily pads, east and west. One day, she found two coins at the bottom of the pond and has placed one on each of the two lily pads. Every morning, Frankie flips the coin on the lily pad she spent her last day on, and jumps to the other lily pad if it lands heads. If the coin is tails, she stays on her lily pad for the day.
 
     The state space is E and W, corresponding to the lily pad Frankie spends her day on. We cannot assume that the coins are fair, as we do not know where they came from! They could be weighted in very different ways. Let’s call the probability that the east coin lands on heads to be $p$ and the probability that the west coin lands on heads to be $q$.
@@ -142,9 +143,107 @@
     p & 1-q
     \end{bmatrix}$
     \end{center}
+    \newpage
+    \textbf{1.3)} Gently place Frankie on the east lily pad and leave the pond for 1 day. Write down the probability vector that represents our best guess for Frankie's location. 
+    \vspace{1em}
 
+    \textbf{Answer:}\\
+    The probability vector is:
+    \begin{center}
+      $\begin{bmatrix}
+        1-p\\
+        p
+      \end{bmatrix}$
+    \end{center}
+    \vspace{1em}
+
+    \textbf{1.4)} What if instead of 1 day, we left Frankie on the east lily pad and left for 2 days. What is the probability vector that represents our best guess for Frankie's location?
+    \vspace{1em}
+
+    \textbf{Answer:}
+    \begin{align*}
+      \begin{bmatrix}
+        1-p & q\\
+        p & 1-q
+      \end{bmatrix}^{2}
+      \begin{bmatrix}
+      1-p\\
+      p
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        p^2 - 2 p + qp + 1 \\
+        2p -p^2 -pq
+      \end{bmatrix}
+    \end{align*}
+    \vspace{1em}
+
+    \textbf{1.5)} We find another frog Arnold with his own pair of lily pads too, which we will call the north and south lily pads. They also each have coins, each with probability r and s of being heads. What is the probability vector that represents the fact that Arnold is on the north lily pad?
+    \vspace{1em}
+
+    \textbf{Answer:}\\
+    We will define the north lily pad state as
+    \begin{center}
+    $\ket{N}=
+    \begin{bmatrix}
+    1\\
+    0
+    \end{bmatrix}
+    $
+    \end{center}
+    Therefore, the probability vector representing Arnold being on the north lily pad is $\begin{bmatrix}
+    1\\0
+    \end{bmatrix}
+    $
+    \vspace{1em}
+
+    \textbf{1.6)} We could independently track Frankie and Arnold's locations, but we can also combine the state spaces to describe both of their states at once. What is the probability vector that describes Frankie on the west lily pad and Arnold on the north lily pad?
+    \vspace{1em}
+    
+    \textbf{Answer:}
+    \begin{align*}
+      \begin{bmatrix}
+        0\\1
+      \end{bmatrix}
+      \otimes 
+      \begin{bmatrix}
+        1\\0
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        0\\0\\1\\0
+      \end{bmatrix}
+    \end{align*}
+    \newpage
+    \textbf{1.7)} Suppose we place Frankie onthe west lily pad and Arnold on the north lily pad, and leave the pond for a day. What is the probability vector that represents our best guess for the state of the frogs after one day?
+
+    \textbf{Answer:}
+    \begin{align*}
+      \begin{bmatrix}
+        q\\1-q
+      \end{bmatrix}
+      \otimes
+      \begin{bmatrix}
+        1-r\\r
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+        q-qr\\qr\\1-q-r+qr\\r-qr
+      \end{bmatrix}
+    \end{align*}
+    \vspace{1em}
+
+    \textbf{1.8)}\\
+    \vspace{-4em}
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{src/hw1q8.png}
+    \end{figure}
 \end{numedquestion}
 
+\begin{numedquestion}
+  
+\end{numedquestion}
 
 
 
