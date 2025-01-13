@@ -32,6 +32,7 @@
 \usepackage{listings}
 \usepackage{accents}
 \usepackage{braket}
+\usepackage{tikz}
 
 \usepackage{centernot}
 \usepackage{mathtools}
@@ -242,7 +243,88 @@
 \end{numedquestion}
 
 \begin{numedquestion}
+  \textbf{2.1)} Write down the two solutions to $z^2 = 1$ in the standard notation of complex numbers.
+  \vspace{1em}
+
+  \textbf{Answer:}
+  \begin{align*}
+    z^2 &= 1\\
+    z &= \sqrt{1}\\
+    z &= \pm 1
+  \end{align*}
   
+  \newpage
+  \textbf{2.2)} What are the $\theta$ if we write the above two solutions in polar notation, that is in the form $\text{cos} \theta + i\text{sin}\theta = e^{i\theta}$. Draw the solutions in the complex plane and label the angle $\theta$ they form with the positive real axis. Verify that for each of the $\theta$, you get $(e^{i\theta})^2 = 1$.
+  \vspace{1em}
+
+  \textbf{Answer:}\\
+  The two answers are $z=\text{cos}0 + i\text{sin}(0) = e^{0i}, \text{cos}(\pi) + i\text{sin}(\pi i) = e^{\pi i}$.\\
+  \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.4\textwidth]{src/hw1q13.png}
+  \end{figure}
+
+  \textbf{Verify}:
+  $$e^{2 * 0i} = e^0 = 1$$
+  $$e^{2\pi i} = \text{cos}(2\pi) + i \text{sin}(2\pi) = 1 + 0 = 1$$
+  \vspace{1em}
+
+  \textbf{1.3)} What are the three solutions to $z^3 = 1$?
+  \vspace{1em}
+
+  \textbf{Answer:}\\
+  \begin{minipage}[t]{0.45\textwidth} 
+    \vspace{0pt} % Ensure proper alignment at the top
+    \begin{align*}
+      z^3 &= 1\\
+      e^{3i\theta} &= 1\\
+      \cos(3\theta) + i\sin(3\theta) &= 1\\
+      3\theta &= 2\pi k\\
+      \theta &= \frac{2\pi}{3}k\\
+      \theta &= 0, \frac{2\pi}{3}, \frac{4\pi}{3}\\
+      z &= e^{0}, e^{i\frac{2\pi}{3}}, e^{i\frac{4\pi}{3}}
+    \end{align*}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.5\textwidth}
+    \vspace{0pt} % Ensure proper alignment at the top
+    \centering
+    \includegraphics[width=0.9\textwidth]{src/hw1q14.png}
+\end{minipage}
+\newpage
+\textbf{1.4)} Let the three solutions from the previous problem be $1, \omega_3,\omega_{3}$ going in counter clockwise order. Verify that the second solution does indeed square to be the third solution.
+\vspace{1em}
+
+\textbf{Answer:}
+\begin{align*}
+(e^{i\frac{2\pi}{3}})^2 &= e^{i\frac{4\pi}{3}}\\
+e^{i\frac{4\pi}{3}} &= e^{i\frac{4\pi}{3}}
+\end{align*}
+
+\textbf{1.5)} We call solutions to the equation $z^{n} = 1$ the $n$-th roots of unity. Of particular interest is the first one in the counter clockwise direction after $1$, which we call $\omega_n$. All the other $n$-th roots of unity can be constructed once this is known. What is a general form for the value of $w_n$? As a hint, you will want to use polar coordinates.
+\vspace{1em}
+
+\textbf{Answer:}\\
+General form for the solutions for the $n$-th roots of unity is $e^{i\frac{2\pi}{n}k}$ where $k$ is an integer.
+\vspace{1em}
+
+\textbf{1.6)} What do you get when you add all three 3rd roots of unity? Briefly justify your solution by drawing the addition.
+\vspace{1em}
+
+\textbf{Answer:}\\
+If you add all 3rd roots of unity, the resulting vector is $\vec{0}$.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.4\textwidth]{src/hw1q16.png}
+\end{figure}
+\vspace{1em}
+
+\textbf{1.7)} Do you get the same result as above if adding up all the 4-th roots of unity? What if we add all the $n$-th roots of unity?
+\vspace{1em}
+
+\textbf{Answer:}\\
+For all $n$, the sum of the $n$-th roots of unity is $\vec{0}$.
+
 \end{numedquestion}
 
 
