@@ -86,6 +86,10 @@
   \item
 }{}
 
+\newcommand{\bravec}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}
+
+\newcommand{\ketvec}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}}
+
 \newcommand{\answerbox}[1]{
 \begin{framed}
 \vspace{#1}
@@ -364,8 +368,8 @@ For all $n$, the sum of the $n$-th roots of unity is $\vec{0}$.
     \textbf{3.4)} Find a state that is orthogonal to $\ket{\psi}$
 
     \textbf{Answer:}\\
-     We will find a $\ket{\phi}$ such that $\braket{\phi | \psi} = 0$:
-     \begin{align*}
+    We will find a $\ket{\phi}$ such that $\braket{\phi | \psi} = 0$:
+    \begin{align*}
     \braket{\phi | \psi} &= 0\\
     \alpha_0^{*}\frac{i}{\sqrt{2}} + \alpha_{1}^{*}\frac{-i}{\sqrt{2}} &= 0\\
     \alpha_0^{*}\frac{i}{\sqrt{2}} &= \alpha_{1}^{*}\frac{i}{\sqrt{2}}\\
@@ -375,6 +379,56 @@ For all $n$, the sum of the $n$-th roots of unity is $\vec{0}$.
         -i/\sqrt{2}\\
         -i/\sqrt{2}
     \end{bmatrix}$
+    \vspace{1em}
+    \newpage
+    Consider the following quantum state
+
+    $\ket{\psi} = (\frac{\sqrt{3}}{4} + i\frac{1}{4})\ket{0} + (-\frac{\sqrt{3}}{4} + i\frac{3}{4})\ket{1}$
+    \vspace{1em}
+    
+    \textbf{3.5)} Verify that $\ket{\psi}$ is a quantum state:
+    \begin{align*}
+    \norm{\ket{\psi}} &= \sqrt{(\frac{\sqrt{3}}{4} + i\frac{1}{4})(\frac{\sqrt{3}}{4} - i\frac{1}{4}) + (-\frac{\sqrt{3}}{4} + i\frac{3}{4})((-\frac{\sqrt{3}}{4} - i\frac{3}{4}))}\\
+    &= \sqrt{(\frac{3}{16} + \frac{1}{16}) + (\frac{3}{16} + \frac{9}{16})}\\
+    &= 1
+    \end{align*}
+    Since the norm of $\ket{\psi}$ is $1$ and it can be represented as a vector with two complex amplitudes, it is a quantum state.
+    \vspace{1em}
+
+    \textbf{3.6)} What is the probability that we measure $\ket{0}$ if we measure in the standard basis? What is the state after the measurement?
+    
+    \textbf{Answer:}\\
+    The probability that we measure $\ket{\psi}$ is $\abs{\frac{\sqrt{3}}{4} + i\frac{1}{4}}^2$ which is $\frac{1}{4}$. The quibit collapses to $\ket{0}$.
+    \vspace{1em}
+
+    \textbf{3.7)} Find a state orthogonal to $\ket{\psi}$.
+
+    We will find $\ket{\phi} = \begin{bmatrix} \alpha_0 \\ \alpha{1}\end{bmatrix}$ such that $\braket{\phi^* | \psi} = 0$.
+    \begin{align*}
+    \bravec{\alpha_0^*}{\alpha_1^*}\ketvec{\frac{\sqrt{3}}{4}+i\frac{1}{4}}{-\frac{\sqrt{3}}{4} + i\frac{3}{4}} &= 0\\
+    \alpha_0^*,\alpha_1^* &= \frac{\sqrt{3}}{4} - i\frac{3}{4}, \frac{\sqrt{3}}{4}+i\frac{1}{4}
+    \end{align*}
+    Therefore we get that:
+    $$\ket{\phi} = \ketvec{\frac{\sqrt{3}}{4} + i\frac{3}{4}}{\frac{\sqrt{3}}{4}-i\frac{1}{4}}$$
+    \vspace{1em}
+
+    \textbf{3.8)} Consider the state $e^{i\pi/4}\ket{\psi}$. That is, multiply the amplitudes by $e^{i\pi/4}\ket{\psi}$. What is the probability that we measure $\ket{0}$ if we measure in the standard basis?
+    \vspace{1em}
+
+    First we find the value of $e^{i\pi/4} = \frac{1}{\sqrt{2}} + i\frac{1}{\sqrt{2}}$. Now, we will rewrite $\alpha_0$ as 
+    \begin{align*}
+      \frac{\sqrt{3}}{4}+i\frac{1}{4} &= \frac{1}{2}(\frac{\sqrt{3}}{2} + i\frac{1}{2})\\
+      &= \frac{1}{2}e^{i\pi/6}
+    \end{align*}
+    Now, to find the probability of measuring $\ket{0}$, we take the square of the norm of the amplitude:
+    \begin{align*}
+    \abs{e^{i\pi/6}\alpha_0}^2 &= \abs{e^{i\pi/4}\frac{1}{2}e^{i\pi/6}}^2\\
+    &= \abs{\frac{1}{2}e^{i5\pi/12}}^2\\
+    &= \frac{1}{4} (\text{cos}(5\pi/12) + i\text{sin}(5\pi/12))(\text{cos}(5\pi/12) - i\text{sin}(5\pi/12))\\
+    &= \frac{1}{4}(\text{cos}^2(5\pi/12) + \text{sin}^2(5\pi/12))\\
+    &= \frac{1}{4}
+    \end{align*}
+
 
 \end{numedquestion}
 
