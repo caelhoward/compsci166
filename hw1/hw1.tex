@@ -33,6 +33,7 @@
 \usepackage{accents}
 \usepackage{braket}
 \usepackage{tikz}
+\usepackage{commath}
 
 \usepackage{centernot}
 \usepackage{mathtools}
@@ -326,7 +327,56 @@ If you add all 3rd roots of unity, the resulting vector is $\vec{0}$.
 For all $n$, the sum of the $n$-th roots of unity is $\vec{0}$.
 
 \end{numedquestion}
+\newpage
 
+\begin{numedquestion}
+    Consider the following quantum state:
+    \vspace{1em}
+
+    $\ket{\psi} = \frac{i}{\sqrt{2}}\ket{0} - \frac{1}{\sqrt{2}}\ket{1}$
+    \vspace{1em}
+
+    \textbf{3.1)} Verify that $\ket{\psi}$ is indeed a quantum state.
+    \begin{align*}
+    \norm{\ket{\psi}} &= \sqrt{\abs{\frac{i}{\sqrt{2}}}^2 + \abs{\frac{-1}{\sqrt{2}}}^2}\\
+    &= \sqrt{1/2 + 1/2}\\
+    &= 1
+    \end{align*}
+    Since $\ket{\psi}$ is a unit vector with comlex amplitudes, it is a quibit.
+    \vspace{1em}
+
+    \textbf{3.2)} If we measure $\ket{\psi}$, what is the probability we measure $\ket{0}$?
+
+    \textbf{Answer:}\\
+    The probability we measure $\ket{0}$ is $\alpha_0^2$ or:
+    \begin{align*}
+    \alpha^2 &= \abs{\frac{i}{\sqrt{2}}}^2\\
+    &= \frac{1}{2}
+    \end{align*}
+    \vspace{1em}
+
+    \textbf{3.3)} Suppose we did observe $\ket{0}$, what is the state of the quibit after the measurement?
+
+    \textbf{Answer:}\\
+    The quibit collapses to $\ket{0}$.
+    \vspace{1em}
+
+    \textbf{3.4)} Find a state that is orthogonal to $\ket{\psi}$
+
+    \textbf{Answer:}\\
+     We will find a $\ket{\phi}$ such that $\braket{\phi | \psi} = 0$:
+     \begin{align*}
+    \braket{\phi | \psi} &= 0\\
+    \alpha_0^{*}\frac{i}{\sqrt{2}} + \alpha_{1}^{*}\frac{-i}{\sqrt{2}} &= 0\\
+    \alpha_0^{*}\frac{i}{\sqrt{2}} &= \alpha_{1}^{*}\frac{i}{\sqrt{2}}\\
+    \alpha_0^*, \alpha_1^* &= \frac{i}{\sqrt{2}},\frac{i}{\sqrt{2}}
+    \end{align*}
+    Therefore, the vector that is orthogonal to $\ket{\psi}$ is $\ket{\phi} = \begin{bmatrix}
+        -i/\sqrt{2}\\
+        -i/\sqrt{2}
+    \end{bmatrix}$
+
+\end{numedquestion}
 
 
 

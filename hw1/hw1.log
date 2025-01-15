@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.22)  12 JAN 2025 21:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.12)  14 JAN 2025 13:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -642,7 +642,7 @@ File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@expandcount=\count375
  (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (c:/texlive/2024/texmf-dist/tex/latex/oberdiek/centernot.sty
+))) (c:/texlive/2024/texmf-dist/tex/latex/commath/commath.sty) (c:/texlive/2024/texmf-dist/tex/latex/oberdiek/centernot.sty
 Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
 ) (c:/texlive/2024/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2024/03/11 v1.30 mathematical typesetting tools
@@ -682,24 +682,24 @@ File: l3backend-pdftex.def 2024-03-14 L3 backend support: PDF output (pdfTeX)
 ) (./hw1.aux)
 \openout1 = `hw1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
  (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count383
@@ -719,20 +719,20 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (c:/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 100.
+Package hyperref Info: Link coloring OFF on input line 101.
  (./hw1.out) (./hw1.out)
 \@outlinefile=\write6
 \openout6 = `hw1.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 100.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 101.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 100.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 101.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Package xypdf Info: Line width: 0.43799pt on input line 100.
+Package xypdf Info: Line width: 0.43799pt on input line 101.
 \c@lstlisting=\count389
  [1
 
@@ -740,26 +740,26 @@ Package xypdf Info: Line width: 0.43799pt on input line 100.
 <src/hw1q8.png, id=24, 1147.28625pt x 585.68813pt>
 File: src/hw1q8.png Graphic file (type png)
 <use src/hw1q8.png>
-Package pdftex.def Info: src/hw1q8.png  used on input line 241.
+Package pdftex.def Info: src/hw1q8.png  used on input line 242.
 (pdftex.def)             Requested size: 234.8775pt x 119.89703pt.
  [3 <./src/hw1q8.png>]
 <src/hw1q13.png, id=31, 412.54124pt x 335.75438pt>
 File: src/hw1q13.png Graphic file (type png)
 <use src/hw1q13.png>
-Package pdftex.def Info: src/hw1q13.png  used on input line 264.
+Package pdftex.def Info: src/hw1q13.png  used on input line 265.
 (pdftex.def)             Requested size: 187.89912pt x 152.92729pt.
 <src/hw1q14.png, id=32, 471.26062pt x 389.95688pt>
 File: src/hw1q14.png Graphic file (type png)
 <use src/hw1q14.png>
-Package pdftex.def Info: src/hw1q14.png  used on input line 292.
+Package pdftex.def Info: src/hw1q14.png  used on input line 293.
 (pdftex.def)             Requested size: 211.3883pt x 174.91965pt.
  [4 <./src/hw1q13.png> <./src/hw1q14.png>]
 <src/hw1q16.png, id=43, 294.34969pt x 228.10219pt>
 File: src/hw1q16.png Graphic file (type png)
 <use src/hw1q16.png>
-Package pdftex.def Info: src/hw1q16.png  used on input line 318.
+Package pdftex.def Info: src/hw1q16.png  used on input line 319.
 (pdftex.def)             Requested size: 187.89912pt x 145.60898pt.
- [5 <./src/hw1q16.png>]
+ [5 <./src/hw1q16.png>] [6]
 This exam contains 0 questions with 0 parts, 0 subparts, and 0 subsubparts.
 (./hw1.aux)
  ***********
@@ -769,21 +769,22 @@ L3 programming layer <2024-03-14>
 Package rerunfilecheck Info: File `hw1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  )
-(\end occurred when \ifx on line 245 was incomplete)
-(\end occurred when \ifx on line 111 was incomplete) 
+(\end occurred when \ifx on line 332 was incomplete)
+(\end occurred when \ifx on line 246 was incomplete)
+(\end occurred when \ifx on line 112 was incomplete) 
 Here is how much of TeX's memory you used:
- 26998 strings out of 474103
- 467883 string characters out of 5747481
- 1937496 words of memory out of 5000000
- 48914 multiletter control sequences out of 15000+600000
+ 27073 strings out of 474104
+ 468692 string characters out of 5747502
+ 1940496 words of memory out of 5000000
+ 48983 multiletter control sequences out of 15000+600000
  568016 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,14n,93p,3277b,485s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb>
-Output written on hw1.pdf (5 pages, 211494 bytes).
+Output written on hw1.pdf (6 pages, 215669 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
- 6 named destinations out of 1000 (max. 500000)
+ 108 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
+ 7 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
