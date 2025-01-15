@@ -428,10 +428,55 @@ For all $n$, the sum of the $n$-th roots of unity is $\vec{0}$.
     &= \frac{1}{4}(\text{cos}^2(5\pi/12) + \text{sin}^2(5\pi/12))\\
     &= \frac{1}{4}
     \end{align*}
-
-
 \end{numedquestion}
+\vspace{1em}
 
+\begin{numedquestion}
+  \textbf{4.2)} Define the two quibit states $\ket{\phi}$ and $\ket{psi}$ as:
+
+  $\ket{\psi} = \frac{\ket{0} + 3i\ket{1}}{\sqrt{10}}$ and $\ket{\phi} = \frac{2\ket{0} - i\ket{1}}{\sqrt{5}}$
+  \vspace{1em}
+
+  What is $\braket{\phi | \psi}$?
+
+  \textbf{Answer}:
+  \begin{align*}
+    \braket{\phi | \psi} &= \frac{2}{\sqrt{50}} + \frac{3i^2}{\sqrt{50}}\\
+    &= -\frac{1}{\sqrt{50}}
+  \end{align*}
+
+  What is $\braket{\psi | \phi}$?
+
+  \textbf{Answer:}
+  \begin{align*}
+    \braket{\phi | \psi} &= \frac{2}{\sqrt{50}} + \frac{3i^2}{\sqrt{50}}\\
+    &= -\frac{1}{\sqrt{50}}
+  \end{align*}
+  \vspace{1em}
+
+  \textbf{4.3)} A quibit state should be normalized, meaning the norm should be 1: $\norm{\ket{\phi}} = 1$. The following state $\ket{\phi}$ is $\textbf{not}$ normalized. Find a constant $N$ such that $\frac{1}{N}\ket{\phi}$ is normalized.
+
+  $\ket{\phi} = 3\ket{0} - i\ket{1}$
+  
+  \textbf{Answer:}\\
+  To find the normalized vector, we divide the non-normalized vector by  its norm. The norm for $\ket{\phi}$ is $\sqrt{\braket{\phi | \phi}} = \sqrt{\bravec{3}{i} \ketvec{3}{-i}} = \sqrt{10}$. Therefore, the normalized vector would be $\ket{\psi} = \frac{1}{\sqrt{10}}\ket{\phi}$.
+  \vspace{1em}
+
+  \textbf{4.4)} Define
+  $\ket{i} = \frac{\ket{0}+i\ket{1}}{\sqrt{2}}$ and $\ket{-i} = \frac{\ket{0}-i\ket{1}}{\sqrt{2}}$. Prove that the pair of state $\ket{i}, \ket{-i}$ for an orthonormal basis.
+
+  $\ket{i} = \ketvec{1/\sqrt{2}}{i/\sqrt{2}}$ $\ket{-i} = \ketvec{1/\sqrt{2}}{-i/\sqrt{2}}$
+
+  \textbf{Answer:}\\
+  First we will show that the norm of both states is $1$.
+
+  $\sqrt{\braket{i|i}} = \frac{1}{2} - \frac{i^2}{2} = 1$\\
+  $\sqrt{\braket{-i|-i}} = \frac{1}{2} - \frac{i^2}{2} = 1$
+
+  Now, we demonstrate that the two vectors are orthogonal.
+  $$\braket{i | -i} = 1/2 + i^2/2 = 0$$
+  Thus, the pair of states form an orthonormal bases.
+\end{numedquestion}
 
 
 
