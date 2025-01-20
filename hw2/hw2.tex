@@ -1,0 +1,258 @@
+\documentclass[11pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\newcommand{\myname}{Cael Howard} %Write your name in here
+\newcommand{\myUCO}{cthoward} 
+\newcommand{\myhwtype}{Homework}
+\newcommand{\myhwnum}{2} %Homework set number
+\newcommand{\myclass}{Compsci 166}
+\newcommand{\mylecture}{}
+\newcommand{\mysection}{}
+
+% Prefix for numedquestion's
+\newcommand{\questiontype}{Question}
+
+
+% Use this if your "written" questions are all under one section
+% For example, if the homework handout has Section 5: Written Questions
+% and all questions are 5.1, 5.2, 5.3, etc. set this to 5
+% Use for 0 no prefix. Redefine as needed per-question.
+\newcommand{\writtensection}{0}
+
+\usepackage{amsmath, amsfonts, amsthm, amssymb}  % Some math symbols
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[all]{xy}
+\usepackage{wrapfig}
+\usepackage{fancyvrb}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{accents}
+\usepackage{braket}
+\usepackage{tikz}
+\usepackage{quantikz}
+\usepackage{commath}
+
+\usepackage{centernot}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\card}{\vert}{\vert}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\pagestyle{empty}
+
+\def\indented#1{\list{}{}\item[]}
+\let\indented=\endlist
+
+\newcounter{questionCounter}
+\newcounter{partCounter}[questionCounter]
+
+\newenvironment{namedquestion}[1][\arabic{questionCounter}]{%
+    \addtocounter{questionCounter}{1}%
+    \setcounter{partCounter}{0}%
+    \vspace{.2in}%
+        \noindent{\bf #1}%
+    \vspace{0.3em} \hrule \vspace{.1in}%
+}{}
+
+\newenvironment{numedquestion}[0]{%
+	\stepcounter{questionCounter}%
+    \vspace{.2in}%
+        \ifx\writtensection\undefined
+        \noindent{\bf \questiontype \; \arabic{questionCounter}. }%
+        \else
+          \if\writtensection0
+          \noindent{\bf \questiontype \; \arabic{questionCounter}. }%
+          \else
+          \noindent{\bf \questiontype \; \writtensection.\arabic{questionCounter} }%
+        \fi
+    \vspace{0.3em} \hrule \vspace{.1in}%
+}{}
+
+\newenvironment{alphaparts}[0]{%
+  \begin{enumerate}[label=\textbf{(\alph*)}]
+}{\end{enumerate}}
+
+\newenvironment{arabicparts}[0]{%
+  \begin{enumerate}[label=\textbf{\arabic{questionCounter}.\arabic*})]
+}{\end{enumerate}}
+
+\newenvironment{questionpart}[0]{%
+  \item
+}{}
+
+\newcommand{\bravec}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}
+
+\newcommand{\ketvec}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}}
+\newcommand{\transgate}[4]{\begin{bmatrix} #1 & #2\\ #3 & #4 \end{bmatrix}}
+
+\newcommand{\hgate}[0]{$\transgate{1/\sqrt{2}}{1/\sqrt{2}}{1/\sqrt{2}}{-1/\sqrt{2}}$}
+\newcommand{\xgate}{$\transgate{0}{1}{1}{0}$}
+\newcommand{\cgate}{$\transgate{1}{0}{0}{i}$}
+\newcommand{\zgate}{$\transgate{1}{0}{0}{-1}$}
+
+\newcommand{\answerbox}[1]{
+\begin{framed}
+\vspace{#1}
+\end{framed}}
+
+\pagestyle{head}
+
+\headrule
+\header{\textbf{\myclass\ \mylecture\mysection}}%
+{\textbf{\myname\ (\myUCO)}}%
+{\textbf{\myhwtype\ \myhwnum}}
+
+\begin{document}
+\thispagestyle{plain}
+\begin{center}
+  {\Large \myclass{} \myhwtype{} \myhwnum} \\
+  \myname{} (\myUCO{}) \\
+  \today
+\end{center}
+
+
+%Here you can enter answers to homework questions
+
+\begin{numedquestion}
+    For the following states, if they are written in the standard basis, rewrite them in the Hadamard basis. If they are written in the Hadamard basis, rewrite them in the standard basis.
+    \vspace{1em}
+
+    \textbf{1)} $\ket{\psi_1} = -\ket{0}$
+    \begin{align*}
+    \ket{\psi_1} &= -(\frac{1}{\sqrt{2}}\ket{+} + \frac{1}{\sqrt{2}}\ket{-})
+    \end{align*} 
+
+    \textbf{2)} $\ket{\psi_2} = \frac{i}{\sqrt{2}}\ket{0} + \frac{1-i}{2}\ket{1}$
+    \begin{align*}
+        \ket{\psi_2} &= \frac{i}{\sqrt{2}}(\frac{1}{\sqrt{2}}(\ket{+} + \ket{-})) + \frac{1-i}{2}(\frac{1}{\sqrt{2}}(\ket{+} + \ket{-}))\\
+        &= \frac{i}{2}(\ket{+} + \ket{-}) + \frac{1-i}{2\sqrt{2}}(\ket{+} - \ket{-})\\
+        &= \frac{i\sqrt{2} + 1 - i}{2\sqrt{2}}\ket{+} + \frac{i\sqrt{2}-1+i}{2\sqrt{2}}\ket{-}
+    \end{align*}
+
+    \textbf{3)} $\ket{\psi_3} = \frac{1}{\sqrt{3}}\ket{+} - \frac{1+i}{\sqrt{3}}\ket{-}$
+    \begin{align*}
+    \ket{\psi_3} &= \frac{1}{\sqrt{3}}(\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})) - \frac{1+i}{\sqrt{3}}(\frac{1}{\sqrt{2}}(\ket{0}-\ket{1}))\\
+    &= \frac{1}{\sqrt{6}}(\ket{0}+\ket{1}) - (\frac{1+i}{\sqrt{6}}(\ket{0}-\ket{1}))\\
+    &= \frac{-i}{\sqrt{6}}\ket{0} + \frac{2+i}{\sqrt{6}}\ket{1}
+    \end{align*}
+
+    \textbf{4)} $\ket{\psi_4} = \frac{1}{\sqrt{2}}\ket{+} - \frac{1}{\sqrt{2}} \ket{-}$
+    \begin{align*}
+    \ket{\psi_4} &= \ket{1}
+    \end{align*}
+    \newpage
+    Recall the $\{\ket{i},\ket{-i}\}$ basis where
+
+    $\ket{i} = \frac{\ket{0}+i\ket{1}}{\sqrt{2}}$
+
+    $\ket{-i} = \frac{\ket{0}-i\ket{1}}{\sqrt{2}}$
+
+    Write the following states in the $\{\ket{i},\ket{-i}\}$ basis, that is as a weighted sum of $\ket{i}$ and $\ket{-i}$.
+    \vspace{1em}
+
+    \textbf{5)} $\ket{\psi_1} = \ket{0}$
+    \begin{align*}
+    \ket{\psi_1} &= \frac{1}{\sqrt{2}}(\ket{i} + \ket{-i})
+    \end{align*}
+
+    \textbf{6)} $\ket{\psi_2} = \ket{1}$
+    \begin{align*}
+        \ket{\psi}_1 &= \frac{i}{\sqrt{2}}(-\ket{i}+\ket{-i}) 
+    \end{align*}
+
+    \textbf{7)} $\ket{\psi_3} = \ket{+}$
+    \begin{align*}
+      \ket{\psi_3} &= \frac{1}{\sqrt{2}}(\frac{1}{\sqrt{2}}(\ket{i}+\ket{-i}) + \frac{i}{\sqrt{2}}(-\ket{i}+\ket{-i}))\\
+      &= \frac{1-i\sqrt{2}}{2}\ket{i} + \frac{1+i\sqrt{2}}{2}\ket{-i}
+    \end{align*}
+
+    \textbf{8)} $\ket{\psi_4} = \frac{\sqrt{3}}{2}\ket{0} - \frac{1}{2}\ket{1}$
+    \begin{align*}
+      \ket{\psi_4} &= \frac{1+i\sqrt{2}}{2}\ket{i} + \frac{1-i\sqrt{2}}{2}\ket{-i}
+    \end{align*}
+
+    \textbf{9)} $\ket{\psi_5}\frac{\sqrt{3}}{1}\ket{0} - \frac{1}{2}\ket{1}$
+    \begin{align*}
+    \ket{\psi_5} &= \frac{\sqrt{3}}{2}(\frac{1}{\sqrt{2}}\ket{i} + \frac{1}{\sqrt{2}}\ket{-i}) - \frac{1}{2}(\frac{-i}{\sqrt{2}}\ket{i} + \frac{i}{\sqrt{2}}\ket{-i})\\
+    &= \frac{\sqrt{3}+i}{2\sqrt{2}}\ket{i}+\frac{\sqrt{3}-i}{2\sqrt{2}}\ket{-i}
+    \end{align*}
+
+    \textbf{10)} $\ket{\psi_6} = \frac{\sqrt{3}}{2}\ket{0} - \frac{1}{2}\ket{-}$
+    \begin{align*}
+      \ket{\psi_6} &= \frac{\sqrt{3}}{2}(\frac{1-i\sqrt{2}}{2}\ket{i} + \frac{1+i\sqrt{2}}{2}\ket{-i}) + \frac{1}{2}(\frac{1+i\sqrt{2}}{2}\ket{i} + \frac{1-i\sqrt{2}}{2}\ket{-i})\\
+      &= \frac{\sqrt{3}-i\sqrt{6}+1+i\sqrt{2}}{4}(\ket{i}+\ket{-i})
+    \end{align*} 
+\end{numedquestion}
+
+\newpage
+\begin{numedquestion}
+  \textbf{1)} Find the adjoint of the matrices $X,Y,Z,A,B,C$
+
+  $X^{\dag} = \transgate{0}{1}{1}{0} \quad Y^\dag = \transgate{0}{-i}{i}{0}\quad Z^\dag = \transgate{1}{0}{0}{-1}$
+  \vspace{1em}
+  
+  $A^\dag = \transgate{-\frac{i}{\sqrt{2}}}{\frac{1-i}{2}}{\frac{1+i}{2}}{-\frac{i}{\sqrt{2}}}\quad B^\dag = \transgate{0}{e^{-i2\pi/3}}{e^{-i\pi/3}}{0}\quad C^\dag = \transgate{1}{0}{0}{-i}$
+
+  \textbf{2)} For each of the following circuits, find the state of the quibit at the end of the circuit, and what the possible outcomes and probabilities are if we measure in the stated basis.
+  \vspace{1em}
+
+  Measure in the Hadamard basis:
+  \begin{quantikz}
+  \lstick{$\ket{0}$} & \gate{X} & \gate{Z} & \qw
+  \end{quantikz}
+  \begin{center}
+    \zgate\xgate $\ketvec{1}{0} = \ketvec{0}{-1}$ 
+  \end{center}
+  Measure $\ket{+}: 1/2, \ket{-}: 1/2$
+  \vspace{1em}
+
+  Measure in the standard basis:
+  \begin{quantikz}
+  \lstick{$\ket{+}$} & \gate{X} & \gate{H} & \qw
+  \end{quantikz}
+  \begin{center}
+    \hgate\xgate $\ketvec{1/\sqrt{2}}{1/\sqrt{2}} = \ketvec{1}{0}$ 
+  \end{center}
+  Measure $\ket{0}: 1, \ket{1}: 0$
+  \vspace{1em}
+
+  Measure in the standard basis:
+  \begin{quantikz}
+    \lstick{$\ket{-}$} & \gate{X} & \gate{H} & \qw
+  \end{quantikz}
+  \begin{center}
+    \hgate\xgate$\ketvec{1/\sqrt{2}}{-1/\sqrt{2}} = \ketvec{0}{-1}$
+  \end{center}
+  Measure $\ket{0}: 0, \ket{1}: 1$
+  \vspace{1em}
+
+  Measure in the Hadamard basis:
+  \begin{quantikz}
+    \lstick{$\ket{0}$} & \gate{H} & \gate{C} & \gate{Y} & \qw
+  \end{quantikz}
+  \begin{center}
+  $\begin{bmatrix} 0 & -i \\ i & 0\end{bmatrix}$ \cgate \hgate $\ketvec{1}{0} = \frac{1}{\sqrt{2}}\ketvec{-1}{i}$
+  \end{center}
+  Probability $\ket{+}$ is measured:
+
+  $|\frac{1}{\sqrt{2}}\bra{+}\ketvec{-1}{i}|^2 = |-\frac{1}{2} + \frac{i}{2}| = 1/2$\\
+  $\ket{-}$ measured: $1/2$
+  
+  Measure in the Hadamard basis:
+  \begin{quantikz}
+    \lstick{$\ket{1}$} & \gate{C} & \gate{Z} & \gate{H} & \gate{X} & \gate{X} & \gate{H} & \gate{C} \qw
+  \end{quantikz}
+  \begin{center}
+    \cgate \zgate \cgate $\ketvec{1}{0} = \ketvec{0}{i}$
+  \end{center}
+  Probability measuring $\ket{1}: 1$, $\ket{0}: 0$
+  
+\end{numedquestion}
+\end{document}
