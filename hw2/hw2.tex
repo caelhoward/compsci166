@@ -258,7 +258,29 @@
 \begin{numedquestion}
   Suppose we repeat the Elitzur-Vaidman bomb experiment but adjust our circuit as follows:\\
   \begin{quantikz}
-    \lstick{$\ket{1}$} & \gate{C} & \gate{Z} & \gate{H} & \gate{X} & \gate{X} & \gate{H} & \gate{C} \qw
+    \lstick{$\ket{0}$} & \gate{R_{\pi/6}} & \gate{B} & \gate{R_{\pi/6}} & \gate{B} & \gate{R_{\pi/6}} & \meter \qw
   \end{quantikz}
+
+  \textbf{3.1)} What are the possible outcomes and probabilities of those outcomes if the bomb is faulty?
+
+  \textbf{Answer:}\\
+  If the bomb is faulty, the $B$ gates act as identity gates. Therefore, the experiment is equivalent to applying a $\pi/6$ rotation to $\ket{0}$ 3 times, resulting in the quibit state becoming $\ket{1}$. Therefore, the only outcome if the bomb is faulty is to measure $\ket{1}$ with probability $1$.
+  \vspace{1em}
+
+  \textbf{3.2)} What are the possible outcomes and probabilites of those outcomes if the bomb is not faulty?
+
+  \textbf{Answer:}\\
+  If the bomb is not faulty, it may or may not explode after the $B$ gate measures the quibit. After the first rotation gate, the state of the quibit is $\frac{\sqrt{3}}{2}\ket{0} + \frac{1}{2}\ket{1}$, meaning that the bomb explodes after the first measurement $1/4$ of the time. $3/4$ths of the time, the bomb measures $\ket{0}$ and the quibit collapses to $\ket{0}$. This process repeats one more time if the initial measurement did not explode the bomb. If the second measurement also did not explode the bomb, then the quibit is measured $\ket{0}$ 3/4ths the time and $\ket{1}$ 1/4ths. The probabilty we measure $\ket{0}$ if the bomb is in fact working is therefore:
+  $$\frac{3}{4}*\frac{3}{4}*\frac{3}{4} = \frac{27}{64}$$
+  The probability we measure $\ket{1}$ is:
+  $$\frac{3}{4}*\frac{3}{4}*\frac{1}{4} = \frac{9}{64}$$
+  And the probability the bomb explodes is therefore:
+  $$\frac{64}{64}-\frac{9+27}{64} = \frac{7}{16}$$
+  \vspace{1em}
+
+  \textbf{3.3)} How does this version of the experiment compare to what we did in class? Which is more effective at detecting a bomb that is not faulty without having it explode? Which has a higher probability that the bomb explodes.
+
+  \textbf{Answer:}\\
+  In the case that the bomb is not faulty, the probability that the scheme covered in class detected it was $1/4$. However, the probability this scheme detects that the bomb is not faulty if that is the case is $27/64$, meaning it has a higher chance of detecting non-faulty bombs. An issue, however, is that this scheme will explode $7/16$ths of the time, which is nearly half. This scheme is therefore much more dangerous.
 \end{numedquestion}
 \end{document}
