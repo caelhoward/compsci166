@@ -283,4 +283,56 @@
   \textbf{Answer:}\\
   In the case that the bomb is not faulty, the probability that the scheme covered in class detected it was $1/4$. However, the probability this scheme detects that the bomb is not faulty if that is the case is $27/64$, meaning it has a higher chance of detecting non-faulty bombs. An issue, however, is that this scheme will explode $7/16$ths of the time, which is nearly half. This scheme is therefore much more dangerous.
 \end{numedquestion}
+
+\begin{numedquestion}
+  \textbf{1)} Suppose we measure all three quibits. What is the probability that we see $\ket{000}$? What is the state of the system after the measurement?
+
+  \textbf{Answer:}\\
+  $\ket{000}$ is measured with probability $3/16$, and the state of the quibit collapses to $\ket{000}$.
+  \vspace{1em}
+
+  \textbf{2)} Suppose instead we only measure the first quibit, and get the results $\ket{1}$. What is the state after the measurement?
+
+  \textbf{Answer:}\\
+  The first quibit is measured as $\ket{1}$ w/ probability:
+  \begin{align*}
+    \abs{1/4}^2 + \abs{\sqrt{3}/4}^2 + \abs{1/2\sqrt{2}}^2 + \abs{1/2\sqrt{2}}^2 = 1/2
+  \end{align*}
+  Since the first quibit collapses to $\ket{1}$, the state of the total quibit state to:
+  $$\ket{\phi} = \frac{\sqrt{2}}{4}\ket{100}+\frac{\sqrt{3}}{4}\ket{101} + \frac{1}{2}\ket{110} + \frac{1}{2}\ket{111}$$
+  \vspace{1em}
+
+  \textbf{3)} $X \otimes I = \begin{bmatrix}
+  0 & 0 & 1 & 0\\0 & 0 & 0 & 1\\1 & 0 & 0 & 0\\0&1&0&0
+  \end{bmatrix}$: $(X \otimes I) \frac{1}{\sqrt{2}}(\ket{01} + \ket{10}) = \frac{1}{\sqrt{2}}(\ket{11} + \ket{00})$
+  \vspace{1em}
+
+  \textbf{4)} $I \otimes Z = \begin{bmatrix}
+  1 & 0 & 0 & 0\\0 & -1 & 0 & 0\\0 & 0 & 1 & 0\\0 & 0 & 0 & -1
+  \end{bmatrix}$: $(I\otimes Z) \frac{1}{\sqrt{2}}(\ket{01} + \ket{10}) = -\frac{1}{\sqrt{2}}(\ket{01}+\ket{10})$
+  \vspace{1em}
+
+  \textbf{5)} $X \otimes Z = \begin{bmatrix}
+  0 & 0 & 1 & 0\\0 & 0 & 0 & -1\\1 & 0 & 0 & 0\\0 & -1 & 0 & 0
+  \end{bmatrix}$: $(X \otimes Z) \frac{1}{\sqrt{2}}(\ket{01} + \ket{10}) = -\frac{1}{\sqrt{2}}(\ket{11} -\ket{00})$
+  \vspace{1em}
+
+  \textbf{6)}
+  \begin{align*}
+  (H \otimes H) \ket{00} &= H \ket{0} \otimes H\ket{0}\\
+  &= \frac{1}{\sqrt{2}}\ket{+} + \frac{1}{\sqrt{2}}\ket{-} \otimes \frac{1}{\sqrt{2}}\ket{+} + \frac{1}{\sqrt{2}}\ket{-}\\
+  &= \begin{bmatrix}
+    1/2\\1/2\\1/2\\1/2
+  \end{bmatrix}
+  \end{align*} 
+
+  \textbf{7)} $\begin{bmatrix}
+    1/4\\
+    1/4\\
+    .\\.\\1/4\\1/4
+  \end{bmatrix}$
+  \vspace{1em}
+
+  \textbf{8)} The resulting state of an n quibit state with a hadamard gate applied to each state is a vector with $2^{n}$ entries of $1/n$.
+\end{numedquestion}
 \end{document}
