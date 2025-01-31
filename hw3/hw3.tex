@@ -1,0 +1,132 @@
+\documentclass[11pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\newcommand{\myname}{Cael Howard} %Write your name in here
+\newcommand{\myUCO}{cthoward} 
+\newcommand{\myhwtype}{Homework}
+\newcommand{\myhwnum}{3} %Homework set number
+\newcommand{\myclass}{Compsci 166}
+\newcommand{\mylecture}{}
+\newcommand{\mysection}{}
+
+% Prefix for numedquestion's
+\newcommand{\questiontype}{Question}
+
+
+% Use this if your "written" questions are all under one section
+% For example, if the homework handout has Section 5: Written Questions
+% and all questions are 5.1, 5.2, 5.3, etc. set this to 5
+% Use for 0 no prefix. Redefine as needed per-question.
+\newcommand{\writtensection}{0}
+
+\usepackage{amsmath, amsfonts, amsthm, amssymb}  % Some math symbols
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[all]{xy}
+\usepackage{wrapfig}
+\usepackage{fancyvrb}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{accents}
+\usepackage{braket}
+\usepackage{tikz}
+\usepackage{quantikz}
+\usepackage{commath}
+
+\usepackage{centernot}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\card}{\vert}{\vert}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\pagestyle{empty}
+
+\def\indented#1{\list{}{}\item[]}
+\let\indented=\endlist
+
+\newcounter{questionCounter}
+\newcounter{partCounter}[questionCounter]
+
+\newenvironment{namedquestion}[1][\arabic{questionCounter}]{%
+    \addtocounter{questionCounter}{1}%
+    \setcounter{partCounter}{0}%
+    \vspace{.2in}%
+        \noindent{\bf #1}%
+    \vspace{0.3em} \hrule \vspace{.1in}%
+}{}
+
+\newenvironment{numedquestion}[0]{%
+	\stepcounter{questionCounter}%
+    \vspace{.2in}%
+        \ifx\writtensection\undefined
+        \noindent{\bf \questiontype \; \arabic{questionCounter}. }%
+        \else
+          \if\writtensection0
+          \noindent{\bf \questiontype \; \arabic{questionCounter}. }%
+          \else
+          \noindent{\bf \questiontype \; \writtensection.\arabic{questionCounter} }%
+        \fi
+    \vspace{0.3em} \hrule \vspace{.1in}%
+}{}
+
+\newenvironment{alphaparts}[0]{%
+  \begin{enumerate}[label=\textbf{(\alph*)}]
+}{\end{enumerate}}
+
+\newenvironment{arabicparts}[0]{%
+  \begin{enumerate}[label=\textbf{\arabic{questionCounter}.\arabic*})]
+}{\end{enumerate}}
+
+\newenvironment{questionpart}[0]{%
+  \item
+}{}
+
+\newcommand{\bravec}[2]{\begin{bmatrix} #1 & #2 \end{bmatrix}}
+
+\newcommand{\ketvec}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}}
+\newcommand{\transgate}[4]{\begin{bmatrix} #1 & #2\\ #3 & #4 \end{bmatrix}}
+
+\newcommand{\hgate}[0]{$\transgate{1/\sqrt{2}}{1/\sqrt{2}}{1/\sqrt{2}}{-1/\sqrt{2}}$}
+\newcommand{\xgate}{$\transgate{0}{1}{1}{0}$}
+\newcommand{\cgate}{$\transgate{1}{0}{0}{i}$}
+\newcommand{\zgate}{$\transgate{1}{0}{0}{-1}$}
+
+\newcommand{\answerbox}[1]{
+\begin{framed}
+\vspace{#1}
+\end{framed}}
+
+\pagestyle{head}
+
+\headrule
+\header{\textbf{\myclass\ \mylecture\mysection}}%
+{\textbf{\myname\ (\myUCO)}}%
+{\textbf{\myhwtype\ \myhwnum}}
+
+\begin{document}
+\thispagestyle{plain}
+\begin{center}
+  {\Large \myclass{} \myhwtype{} \myhwnum} \\
+  \myname{} (\myUCO{}) \\
+  \today
+\end{center}
+
+
+%Here you can enter answers to homework questions
+
+\begin{numedquestion}
+    \textbf{1)} Design a two quibit circuit that starts in the state $\ket{00}$ and ends with $\ket{\Psi^-}$.
+    \begin{center}
+        \begin{quantikz}
+            \ket{0}&\gate{X}&\gate{H}&\ctrl{1}&\\
+            \ket{0}&&&\targ{}&\\
+        \end{quantikz}
+    \end{center}
+\end{numedquestion}
+\end{document}
