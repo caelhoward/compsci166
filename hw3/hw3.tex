@@ -128,5 +128,65 @@
             \ket{0}&&&\targ{}&\\
         \end{quantikz}
     \end{center}
+    \textbf{2)} Write down $\ket{0}$ and $\ket{1}$ as a weighted sum of $\ket{\pi/6}$ and $\ket{4\pi/6}$ in the above basis.
+    \begin{align*}
+    \ket{0} &= \frac{\sqrt{3}}{2}\ket{\pi/6} - \frac{1}{2}\ket{4\pi/6}\\
+    \ket{1} &= \frac{1}{2}\ket{\pi/6} + \frac{\sqrt{3}}{2}\ket{4\pi/6}
+    \end{align*}
+    \textbf{3)} If Alice measures her quibit in the standard basis, what are the probabilities of each outcome, and the state of the two quibits after the measurement?
+    \begin{align*}
+      \ket{0}: 1/2 \text{ Probability and state collapses to }\ket{01}\\
+      \ket{1}: 1/2 \text{ Probability and state collapses to }\ket{10}
+    \end{align*}
+
+    \textbf{4)} If Alice instead chooses to measure in the $\{\ket{\pi/6}, \ket{4\pi/6}\}$ basis, what are the porbailities of each outcome, and the state of the two quibits after the measurement?
+    \begin{align*}
+    \ket{\Psi^-} &= \frac{1}{\sqrt{2}}((\frac{\sqrt{3}}{2}\ket{\pi/6} - \frac{1}{2}\ket{4\pi/6}) \otimes \ket{1}- (\frac{1}{2}\ket{\pi/6} + \frac{\sqrt{3}}{2}\ket{4\pi/6})\otimes \ket{0})\\
+    \end{align*}
+    Alice measures:
+    \begin{center}
+    $\ket{\pi/6}$ w/ probability 1/2, collapses to $\frac{\sqrt{3}}{2}\ket{\pi/6}\ket{1} - \frac{1}{2}\ket{\pi/6}\ket{0}$\\
+    $\ket{4\pi/6}$ w/ probability 1/2, collapses to $\frac{-1}{2}\ket{4\pi/6}\ket{1} - \frac{\sqrt{3}}{2}\ket{4\pi/6}\ket{0}$
+    \end{center}
+    \textbf{5)} Verbally describe what happens to the second quibit when the first quibit of a $\ket{\Psi}$ state gets measures.
+    
+    \textbf{Answer:}\\
+    The second quibit collapses into a state of $R_{-\theta}\ket{0}$ for $\theta = $ the state of the first quibit.
+\end{numedquestion}
+\newpage
+\begin{numedquestion}
+  \textbf{1)} Determine whether a state $\ket{\psi}$ that we know to be one of the two states is clonable or not. Briefly justify your answer.
+
+  \textbf{Answer:}\\
+  Yes. Since $\ket{i}$ and $\ket{-i}$ form an orthonormal basis, there must exist a $U$ that can clone a quibit that we know to be in one of the two above states.
+  \vspace{1em}
+
+  \textbf{2)} Design a quantum circuit that clones a state if we know it is in the above basis.
+  \begin{center}
+    \begin{quantikz}
+    \ket{\psi} &\gate{S}&\gate{H}&\ctrl{1}&\gate{H}&\gate{S}&\\
+    \ket{\ket{0}} &&& \targ{} & \gate{H} & \gate{S}&
+    \end{quantikz}
+  \end{center}
+
+  \textbf{3)} Design a 4 quibit quantum circuit that clones 2 quibit standard basis states.
+  \begin{center}
+    \begin{quantikz}
+    \ket{\psi_1}& \ctrl{2} & \qw & \qw\\
+    \ket{\psi_2}& \qw & \ctrl{2} & \qw\\
+    \ket{\psi_3}& \targ{} & \qw & \qw\\
+    \ket{\psi_4}& \qw & \targ{} & \qw
+    \end{quantikz}
+  \end{center}
+
+  \textbf{4)} Design a 4 quibit quantum circuit that clones the Bell basis states.
+  \begin{center}
+    \begin{quantikz}
+    \ket{\psi_1}& \ctrl{1} & \gate{H} & \ctrl{2} & \qw & \qw &\gate{H} & \ctrl{1} & \qw\\
+    \ket{\psi_2}& \targ{} & \qw & \qw & \ctrl{2} & \qw & \qw & \targ{} & \qw\\
+    \ket{\psi_3}& \qw & \qw &\targ{} & \qw & \qw & \gate{H} & \ctrl{1} & \qw\\
+    \ket{\psi_4}& \qw & \qw &\qw & \targ{} & \qw & \qw & \targ{} & \qw
+    \end{quantikz}
+  \end{center}
 \end{numedquestion}
 \end{document}
