@@ -189,4 +189,49 @@
     \end{quantikz}
   \end{center}
 \end{numedquestion}
+
+\newpage
+\begin{numedquestion}
+  \textbf{1)} What does the serial code $010$ get mapped to using this function?
+
+  \textbf{Answer:}
+  \begin{align*}
+  f(010) &= (2 \cdot 17 + 4)(\text{mod } 64)\\
+  &= 38
+  \end{align*}
+
+  \textbf{2)} What does the serial code $110$ get mapped to using this function?
+
+  \textbf{Answer:}
+  \begin{align*}
+  f(110) &= (6 \cdot 17 + 4)(\text{mod } 64)\\
+  &= 42
+  \end{align*}
+  
+  \textbf{3)} If a client handed you a bill with the serial number $010$, what basis would you measure each quibit in to verify that it is in the correct state.
+  
+  \textbf{Answer:}\\
+  The function with serial number $010$ outputs $38$ which is $100110$ in binary. This bitstring translates to $\ket{+1+}$ which means that the first and third bits should be measured in the hadamard basis and the second bit in the standard basis.
+  \vspace{1em}
+
+  \textbf{4)} If a client handed you a bill with the serial number $110$, what basis would you measure each quibit in to verify that it is in the correct state.
+
+  \textbf{Answer:}\\
+  The function with serial number $110$ outputs $42$ which is $101010$ in binary. This bitstring translates to $\ket{+++}$ which means that the first and third bits should be measured in the hadamard basis and the second bit in the standard basis.
+  \vspace{1em}
+
+  \textbf{5)} The probability the verification is successful is the probability that $\ket{0}$ measures correctly for any of the given quibits. The probabilities for $\ket{0}, \ket{1}, \ket{+}, \ket{-}$ being measured correctly given $\ket{\psi_1}$ is $\ket{0}$ are $1, 0, 1/2, 1/2$ respectively, meaning that the probability that the verification succeeds is $1/2$.
+  \vspace{1em}
+
+  \textbf{6)} Let $\ket{\psi}$ be the state received after the bank runs their verification process. If the verification was successful, what is the state of $\ket{\psi}$?
+
+  \textbf{Answer:}\\
+  The state of $\ket{\psi}$ must be the same for all $\ket{\psi_i}$ except for $i = 0$ in which case $\ket{\psi_0} = \ket{\psi_0^\perp}$ where $\ket{\psi_{0}^\perp}$ is the state orthogonal to the original first quibit's state.
+  \newpage
+
+  \textbf{7)} Design a counterfeiting strategy to create a copy of $\ket{\psi}$ for all $n$ quibits. How many times would we need to resubmit to the bank?
+
+  \textbf{Answer:}\\
+  In order to find a strategy to create a copy of $\ket{\psi}$ we will need to find out $\ket{\psi_i}$ for all $i$. We will generalize the strategy for finding each quibit. We first replace the quibit with $\ket{0}$ and try to verify it. If it passes, we know the correct bit cannot be a $\ket{1}$. We repeat this using $\ket{0}$ for the particular quibit until we are certain that $\ket{\psi_i}$ is $\ket{0}$ with a probability $> \epsilon$ for whatever value for $\epsilon$ we see fit. If we ever measure $\ket{1}$, we know that the correct quibit is either $\ket{+}$ or $\ket{-}$, so it takes one extra bill submission to determine which of the two it is. Therefore, to counterfit each $\ket{\psi_i}$, it will take $O(n)$ submissions.
+\end{numedquestion}
 \end{document}
