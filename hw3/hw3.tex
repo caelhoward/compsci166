@@ -125,7 +125,7 @@
     \begin{center}
         \begin{quantikz}
             \ket{0}&\gate{X}&\gate{H}&\ctrl{1}&\\
-            \ket{0}&&&\targ{}&\\
+            \ket{0}&\gate{X}&&\targ{}&\\
         \end{quantikz}
     \end{center}
     \textbf{2)} Write down $\ket{0}$ and $\ket{1}$ as a weighted sum of $\ket{\pi/6}$ and $\ket{4\pi/6}$ in the above basis.
@@ -233,5 +233,29 @@
 
   \textbf{Answer:}\\
   In order to find a strategy to create a copy of $\ket{\psi}$ we will need to find out $\ket{\psi_i}$ for all $i$. We will generalize the strategy for finding each quibit. We first replace the quibit with $\ket{0}$ and try to verify it. If it passes, we know the correct bit cannot be a $\ket{1}$. We repeat this using $\ket{0}$ for the particular quibit until we are certain that $\ket{\psi_i}$ is $\ket{0}$ with a probability $> \epsilon$ for whatever value for $\epsilon$ we see fit. If we ever measure $\ket{1}$, we know that the correct quibit is either $\ket{+}$ or $\ket{-}$, so it takes one extra bill submission to determine which of the two it is. Therefore, to counterfit each $\ket{\psi_i}$, it will take $O(n)$ submissions.
+
+  \begin{numedquestion}
+    \textbf{1)} Diagram of the circuit for the protocol
+    \begin{center}
+      \begin{quantikz}
+        \ket{\psi} & \qw & \ctrl{1} & \gate{H} & \meter{} & \qw\\
+        \qw & \qw & \targ{} & \qw & \meter{} & \qw\\
+        \qw & \qw & \qw & \qw & \qw & \qw \\
+      \end{quantikz}
+    \end{center}
+
+    \textbf{2)}
+    \begin{align*}
+    &\frac{1}{\sqrt{2}}(\alpha\ket{001} + \alpha\ket{010} + \beta\ket{101} + \beta\ket{110})\\
+    \textbf{CNOT: }&  \frac{1}{\sqrt{2}}(\alpha\ket{001} + \alpha\ket{010} + \beta\ket{111} + \beta\ket{100})\\
+    \textbf{H: }&\frac{1}{2}(\alpha\ket{001}+\alpha\ket{101} + \alpha\ket{010}  \alpha\ket{110} + \beta\ket{011} - \beta\ket{111} + \beta\ket{000} - \beta\ket{100})
+    \end{align*}
+
+    \textbf{3)} Alice measures:\\
+    $\ket{00}$: $\alpha\ket{1} + \beta\ket{0}$ Apply X gate\\
+    $\ket{01}$: $\alpha\ket{0} + \beta\ket{1}$ Apply I gate\\
+    $\ket{10}$: $\alpha\ket{1} - \beta\ket{0}$: Apply X then Z gate\\
+    $\ket{11}$: $\alpha\ket{0} - \beta{1}$: Apply Z gate
+  \end{numedquestion}
 \end{numedquestion}
 \end{document}
